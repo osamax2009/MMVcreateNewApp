@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.newsapp.R
+import com.example.newsapp.ui.NewsActivity
+import com.example.newsapp.ui.NewsViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -13,6 +15,7 @@ import com.example.newsapp.R
  * create an instance of this fragment.
  */
 class BreakingFragment : Fragment( R.layout.fragment_bracking) {
+    lateinit var viewModel : NewsViewModel
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
@@ -26,8 +29,10 @@ class BreakingFragment : Fragment( R.layout.fragment_bracking) {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        viewModel = (activity as NewsActivity).viewModel
         // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_bracking, container, false)
+
     }
 
     companion object {

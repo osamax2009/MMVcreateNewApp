@@ -6,6 +6,8 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.example.newsapp.R
+import com.example.newsapp.ui.NewsActivity
+import com.example.newsapp.ui.NewsViewModel
 
 /**
  * A simple [Fragment] subclass.
@@ -16,6 +18,7 @@ class ArticleFragment : Fragment() {
     // TODO: Rename and change types of parameters
     private var param1: String? = null
     private var param2: String? = null
+    lateinit var viewModel : NewsViewModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,6 +30,7 @@ class ArticleFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
+        viewModel = (activity as NewsActivity).viewModel
         return inflater.inflate(R.layout.fragment_article, container, false)
     }
 
